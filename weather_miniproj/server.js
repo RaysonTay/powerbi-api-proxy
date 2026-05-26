@@ -1,8 +1,13 @@
+requre('dotenv').config();
+
 const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = 3000;
+
+const PORT = process.env.PORT || 3000;
+const LATITUDE = process.env.LATITUDE;
+const LONGITUDE = process.env.LONGITUDE;
 
 app.get('/weather', async (req, res) => {
 
@@ -12,8 +17,8 @@ app.get('/weather', async (req, res) => {
             'https://api.open-meteo.com/v1/forecast',
             {
                 params: {
-                    latitude: 1.29,
-                    longitude: 103.85,
+                    latitude: LATITUDE,
+                    longitude: LONGITUDE,
                     hourly: 'temperature_2m,relative_humidity_2m'
                 }
             }
