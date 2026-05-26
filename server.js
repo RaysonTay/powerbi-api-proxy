@@ -14,15 +14,20 @@ app.get('/weather', async (req, res) => {
                 params: {
                     latitude: 1.29,
                     longitude: 103.85,
-                    current: 'temperature_2m,wind_speed_10m',
                     hourly: 'temperature_2m,relative_humidity_2m'
                 }
             }
         );
 
-        const weatherData = response.data;
+        const hourly = response.data.hourly;
 
-        res.json(weatherData);
+        const transformedData = hourly.time.map((time, index) => ({
+            time: time,
+            temperature: hourly.temperature_2m[index],
+            humidity: hourly.relative_humidity_2m[index]
+        }));
+
+        res.json(transformedData);
 
     } catch (error) {
 
