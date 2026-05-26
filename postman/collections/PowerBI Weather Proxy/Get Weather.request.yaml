@@ -1,0 +1,5 @@
+$kind: http-request
+name: Get Weather
+method: GET
+url: 'http://localhost:3000/weather'
+description: 'Fetches current weather and hourly forecast data via the local proxy. The proxy calls Open Meteo internally with Singapore coordinates (lat 1.29, lon 103.85).'

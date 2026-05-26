@@ -1,0 +1,3 @@
+$kind: collection
+name: PowerBI Weather Proxy
+description: Collection for testing the local weather proxy that fetches data from Open Meteo and serves it for Power BI and SharePoint.
