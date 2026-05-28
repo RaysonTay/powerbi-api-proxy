@@ -2,8 +2,9 @@
   "name": "powerbi-api-proxy",
   "version": "1.0.0",
   "description": "learning fetch data via API into Power BI, api backend proxy to display live feed in html, hosted on sharepoint",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
